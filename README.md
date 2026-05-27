@@ -15,7 +15,6 @@ THIS SOFTWARE IS PROVIDED FOR EDUCATIONAL PURPOSES ONLY
 UNAUTHORIZED USE IS A FEDERAL CRIME IN MOST COUNTRIES
 YOU MUST HAVE WRITTEN PERMISSION FROM SYSTEM OWNERS
 THE AUTHOR ASSUMES NO LEGAL RESPONSIBILITY FOR MISUSE
-```
 
 ### Legal Compliance Requirements:
 
@@ -90,7 +89,7 @@ This implementation serves as an educational resource for macOS/iOS developers t
 
 ## Architecture
 
-```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                    SocialEngineeringToolkit                  │
 ├─────────────────────────────────────────────────────────────┤
@@ -113,7 +112,7 @@ This implementation serves as an educational resource for macOS/iOS developers t
 │  ├── Configuration Files                                     │
 │  └── Payload Templates                                       │
 └─────────────────────────────────────────────────────────────┘
-```
+
 
 ### Data Flow Diagram
 
