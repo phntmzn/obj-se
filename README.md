@@ -1,5 +1,3 @@
-Here's a comprehensive README.md for the Social Engineering Toolkit Objective-C project:
-
 ```markdown
 # 🚨 Social Engineering Toolkit (Objective-C)
 ### *For Educational & Authorized Security Research Only*
@@ -695,3 +693,375 @@ USERS ARE SOLELY RESPONSIBLE FOR COMPLIANCE WITH ALL APPLICABLE LAWS.
 ```
 
 This README provides comprehensive documentation while maintaining strong legal and ethical warnings throughout. It's designed to educate security professionals while clearly distinguishing between legitimate testing and illegal activity.
+
+# Social Engineering Awareness Lab for macOS
+
+> Objective-C learning project for defensive security education, awareness training, and authorized lab demonstrations.
+
+[![Platform](https://img.shields.io/badge/platform-macOS%2010.15%2B-blue.svg)](https://developer.apple.com/macos/)
+[![Language](https://img.shields.io/badge/Objective--C-2.0-orange.svg)](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
+[![Use](https://img.shields.io/badge/use-Defensive%20Education-green.svg)](#legal-and-ethical-use)
+
+## Legal and Ethical Use
+
+This project is intended only for:
+
+- Security awareness training in an approved environment
+- Classroom or lab demonstrations
+- Defensive research on systems you own or are explicitly authorized to test
+- Learning Objective-C networking, logging, configuration, and macOS app structure
+
+Do not use this project to collect real credentials, impersonate real services, target people without consent, bypass security controls, or test systems outside a written scope of authorization.
+
+Unauthorized activity may violate laws such as the Computer Fraud and Abuse Act, the UK Computer Misuse Act, GDPR/data-protection rules, and other local cybercrime laws. You are responsible for understanding and following the laws that apply to you.
+
+---
+
+## Overview
+
+Social Engineering Awareness Lab is a small Objective-C/macOS project that demonstrates the architecture behind defensive awareness tools. The goal is to help developers and security learners understand how social-engineering simulations are structured without providing a tool for real-world abuse.
+
+The project focuses on safe, local, lab-only concepts:
+
+- Serving local educational HTML templates
+- Observing mock form submissions using dummy data
+- Recording training events without storing real secrets
+- Managing configuration with property lists
+- Building a simple Objective-C HTTP service for learning purposes
+- Producing logs that support defensive training reports
+
+This is not a replacement for professional awareness platforms or authorized penetration-testing tools.
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Safe Usage Examples](#safe-usage-examples)
+- [Configuration](#configuration)
+- [Security Controls](#security-controls)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [Disclaimer](#disclaimer)
+- [References](#references)
+
+---
+
+## Features
+
+| Module | Status | Purpose |
+| --- | --- | --- |
+| Local Training HTTP Server | Implemented | Serves local awareness-training pages |
+| Mock Submission Observer | Implemented | Records dummy training events only |
+| Configuration Manager | Implemented | Loads plist-based configuration |
+| Logging Manager | Implemented | Writes structured local logs |
+| Template Renderer | Planned | Loads approved training templates |
+| Reporting Export | Planned | Exports lab results for review |
+| Consent Banner | Planned | Displays authorization and training notices |
+
+Removed from scope: real credential collection, payload delivery, reverse shells, covert persistence, email spoofing, or modules designed to deceive real users outside a training environment.
+
+---
+
+## Architecture
+
+```text
+┌─────────────────────────────────────────────────────────────┐
+│              Social Engineering Awareness Lab               │
+├─────────────────────────────────────────────────────────────┤
+│  macOS App Layer                                             │
+│  ├── AppDelegate                                             │
+│  └── Training Session Controller                             │
+├─────────────────────────────────────────────────────────────┤
+│  Core Services                                               │
+│  ├── SETConfigurationManager                                 │
+│  ├── SETLoggingManager                                       │
+│  └── SETHTTPServer                                           │
+├─────────────────────────────────────────────────────────────┤
+│  Defensive Training Modules                                  │
+│  ├── LocalTemplateServer                                     │
+│  ├── MockSubmissionObserver                                  │
+│  └── TrainingReportBuilder                                   │
+├─────────────────────────────────────────────────────────────┤
+│  Resources                                                   │
+│  ├── Approved HTML templates                                 │
+│  ├── Example plist configuration                             │
+│  └── Documentation                                           │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Training Event Flow
+
+```text
+[Lab Participant]
+       ↓
+[Local Training Page]
+       ↓
+[Mock Submission]
+       ↓
+[SETHTTPServer]
+       ↓
+[MockSubmissionObserver]
+       ↓
+[SETLoggingManager]
+       ↓
+[Training Report]
+```
+
+The application should use dummy usernames, dummy passwords, and consent-based lab scenarios only.
+
+---
+
+## Project Structure
+
+```text
+SocialEngineeringAwarenessLab/
+├── README.md
+├── SocialEngineeringAwarenessLab.xcodeproj/
+├── SocialEngineeringAwarenessLab/
+│   ├── AppDelegate.h
+│   ├── AppDelegate.m
+│   ├── main.m
+│   ├── Core/
+│   │   ├── SETConfigurationManager.h
+│   │   ├── SETConfigurationManager.m
+│   │   ├── SETHTTPServer.h
+│   │   ├── SETHTTPServer.m
+│   │   ├── SETLoggingManager.h
+│   │   └── SETLoggingManager.m
+│   ├── Modules/
+│   │   ├── LocalTemplateServer.h
+│   │   ├── LocalTemplateServer.m
+│   │   ├── MockSubmissionObserver.h
+│   │   ├── MockSubmissionObserver.m
+│   │   ├── TrainingReportBuilder.h
+│   │   └── TrainingReportBuilder.m
+│   └── Resources/
+│       ├── Templates/
+│       │   └── awareness_demo.html
+│       └── Config/
+│           └── default.config
+└── scripts/
+    └── build.sh
+```
+
+---
+
+## Installation
+
+### Requirements
+
+- macOS 10.15 Catalina or later
+- Xcode 12 or later
+- Xcode Command Line Tools
+
+Install command line tools:
+
+```bash
+xcode-select --install
+```
+
+### Build in Xcode
+
+```bash
+cd ~/Desktop/SocialEngineeringAwarenessLab
+open SocialEngineeringAwarenessLab.xcodeproj
+```
+
+Then build with `Command + B` and run with `Command + R`.
+
+### Build from Terminal
+
+```bash
+xcodebuild \
+  -project SocialEngineeringAwarenessLab.xcodeproj \
+  -scheme SocialEngineeringAwarenessLab \
+  -configuration Debug \
+  build
+```
+
+---
+
+## Safe Usage Examples
+
+### Start a Local Training Server
+
+```objc
+#import "Core/SETHTTPServer.h"
+
+SETHTTPServer *server = [[SETHTTPServer alloc] init];
+[server startOnPort:8080
+    withDocumentRoot:@"/path/to/approved/training/templates"];
+
+NSLog(@"Training server running at http://localhost:8080");
+```
+
+Use only locally approved templates. Do not clone real login pages or represent the page as a real external service.
+
+### Log a Mock Training Event
+
+```objc
+#import "Core/SETLoggingManager.h"
+
+SETLoggingManager *logger = [SETLoggingManager sharedLogger];
+[logger logMessage:@"Mock training form submitted with dummy data"
+           withLevel:SETLogLevelInfo];
+```
+
+Do not store real passwords, session tokens, private keys, or personal data in logs.
+
+### Load Configuration
+
+```objc
+#import "Core/SETConfigurationManager.h"
+
+SETConfigurationManager *config = [SETConfigurationManager sharedManager];
+[config loadConfigurationFromFile:@"~/Library/Application Support/SEAwarenessLab/default.config"];
+
+NSInteger port = config.serverPort;
+BOOL loggingEnabled = config.enableLogging;
+```
+
+---
+
+## Configuration
+
+Default config path:
+
+```text
+~/Library/Application Support/SEAwarenessLab/default.config
+```
+
+Example plist configuration:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>server_port</key>
+    <integer>8080</integer>
+    <key>server_ip</key>
+    <string>127.0.0.1</string>
+    <key>enable_logging</key>
+    <true/>
+    <key>log_level</key>
+    <string>INFO</string>
+    <key>training_mode</key>
+    <true/>
+    <key>store_sensitive_data</key>
+    <false/>
+</dict>
+</plist>
+```
+
+Recommended defaults:
+
+- Bind to `127.0.0.1` for local-only testing
+- Use high ports such as `8080` or `8888`
+- Keep `training_mode` enabled
+- Keep `store_sensitive_data` disabled
+
+---
+
+## Security Controls
+
+Before running any training session, verify the following:
+
+- Written authorization exists for the session
+- Participants know they are in a training or lab environment
+- Only dummy credentials are used
+- The server binds to localhost or an isolated lab network
+- Logs do not contain real secrets or unnecessary personal data
+- Test data is deleted after the exercise
+- The training scope, time window, and responsible owner are documented
+
+### Safer Logging Pattern
+
+```objc
+// Good: records the event without storing secrets.
+[logger logMessage:@"Participant completed mock login training step"
+           withLevel:SETLogLevelInfo];
+
+// Avoid: never log real passwords, tokens, or private information.
+```
+
+---
+
+## Troubleshooting
+
+| Issue | Fix |
+| --- | --- |
+| Permission denied when binding to a port | Use a port above 1024, such as 8080 |
+| Port already in use | Run `lsof -i :8080` and choose a different port |
+| Page does not load | Confirm the document root exists and contains `index.html` |
+| Logs are missing | Check `enable_logging` in the plist configuration |
+| Xcode build fails | Clean the build folder with `Shift + Command + K` and rebuild |
+
+Useful commands:
+
+```bash
+lsof -i :8080
+curl -v http://127.0.0.1:8080
+tail -f ~/Library/Logs/SEAwarenessLab/*.log
+```
+
+---
+
+## Contributing
+
+Contributions should keep the project defensive, educational, and consent-based.
+
+Acceptable contributions:
+
+- Better local training templates
+- Safer logging and privacy controls
+- Accessibility improvements
+- Documentation improvements
+- Reporting for lab results
+- Defensive detection notes
+
+Out of scope:
+
+- Real credential collection
+- Payload execution
+- Persistence mechanisms
+- Covert data capture
+- Email spoofing or impersonation tooling
+- Instructions for targeting real users without consent
+
+---
+
+## Disclaimer
+
+This software is provided for defensive education and authorized lab use only. It is provided as-is, without warranty of any kind. The authors and contributors are not responsible for misuse, damages, legal consequences, or policy violations caused by use of this project.
+
+Use this project only in environments where you have explicit permission and a clearly defined training purpose.
+
+---
+
+## References
+
+- OWASP Web Security Testing Guide
+- OWASP Security Awareness resources
+- Apple Objective-C documentation
+- Apple Networking documentation
+- NIST Cybersecurity Framework
+- NIST SP 800-50: Building an Information Technology Security Awareness and Training Program
+
+---
+
+## Version History
+
+| Version | Date | Changes |
+| --- | --- | --- |
+| 1.0.0 | 2026-05 | Defensive README rewrite and project scope cleanup |
+
+---
+
+## Final Reminder
+
+Use this project to teach, defend, and understand. Do not use it to deceive real users, collect real secrets, or test systems without permission.
