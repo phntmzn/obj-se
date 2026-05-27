@@ -1,0 +1,16 @@
+//
+//  SEToolkit_Prefix.pch
+//  Social Engineering Toolkit
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <Cocoa/Cocoa.h>
+    #import <WebKit/WebKit.h>
+    #import <Network/Network.h>
+#endif
+
+// Global configuration
+#define kDefaultPort 8080
+#define kLogPath @"~/Library/Logs/SEToolkit/"
+#define kConfigFile @"set.config"
