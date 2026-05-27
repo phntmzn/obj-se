@@ -1,6 +1,5 @@
-Here's a comprehensive README.md for the Social Engineering Toolkit Objective-C project:
 
-```markdown
+
 # 🚨 Social Engineering Toolkit (Objective-C)
 ### *For Educational & Authorized Security Research Only*
 
@@ -10,7 +9,7 @@ Here's a comprehensive README.md for the Social Engineering Toolkit Objective-C 
 
 ## ⚠️ LEGAL WARNING - READ BEFORE PROCEEDING ⚠️
 
-```
+
 THIS SOFTWARE IS PROVIDED FOR EDUCATIONAL PURPOSES ONLY
 UNAUTHORIZED USE IS A FEDERAL CRIME IN MOST COUNTRIES
 YOU MUST HAVE WRITTEN PERMISSION FROM SYSTEM OWNERS
