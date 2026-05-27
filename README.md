@@ -89,7 +89,7 @@ This implementation serves as an educational resource for macOS/iOS developers t
 
 ## Architecture
 
-
+```
 ┌─────────────────────────────────────────────────────────────┐
 │                    SocialEngineeringToolkit                  │
 ├─────────────────────────────────────────────────────────────┤
@@ -112,7 +112,7 @@ This implementation serves as an educational resource for macOS/iOS developers t
 │  ├── Configuration Files                                     │
 │  └── Payload Templates                                       │
 └─────────────────────────────────────────────────────────────┘
-
+```
 
 ### Data Flow Diagram
 
